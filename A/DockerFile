@@ -1,0 +1,9 @@
+FROM node
+
+RUN git clone https://github.com/Tronix117/wik-devops-3tp.git
+
+WORKDIR wik-devops-3tp
+
+RUN npm install
+
+CMD NODE_ENV=development MONGO_HOST=mongodb MONGO_USER=admin MONGO_DATABASE=admin MONGO_PASSWORD=azerty node app.js

@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mongodb:
+    image: mvertes/mongodb:latest
+    ports:
+      - 27017:27017
+      - 28017:28017
+    environment:
+      MONGODB_PASS: "azerty"
+    env_file:
+      - value.env
+  api-moncolis:
+    build:
+      context: .
+    image: homecolis-api:latest
+    ports:
+      - 3000:3080
